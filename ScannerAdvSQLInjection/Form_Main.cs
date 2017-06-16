@@ -203,7 +203,7 @@ namespace ScannerAdvSQLInjection {
         }
 
         private void refreshSearchEngineUrl(Boolean bInternational, Boolean bAspPages) {
-            String sSearchEngineServer;
+            string sSearchEngineServer;
 
             if (bInternational) {
                 rbSearchEngine1.Checked = true;
@@ -224,7 +224,7 @@ namespace ScannerAdvSQLInjection {
             if (bAspPages) rbSearchEnginePages1.Checked = true;
             else rbSearchEnginePages2.Checked = true;
 
-            txtSearchEngineUrl.Text = "http://" + sSearchEngineServer + "/" + Global.GLOBAL_PARAM_SEARCH_ENGINE_SEARCH;
+            txtSearchEngineUrl.Text = Global.GLOBAL_SERVER_SEARCH_ENGINE_PROTOCOL + "://" + sSearchEngineServer + "/" + Global.GLOBAL_PARAM_SEARCH_ENGINE_SEARCH;
 
             // Parameter Page (Asp or Aspx)
             if (rbSearchEnginePages1.Checked) txtSearchEngineUrl.Text += Global.GLOBAL_PARAM_SEARCH_ENGINE_SEARCH_VALUE.Replace("{1}", String.Empty);
@@ -280,38 +280,52 @@ namespace ScannerAdvSQLInjection {
                 try {
                     StreamReader oStreamReader = new StreamReader(((HttpWebResponse) oWebException.Response).GetResponseStream());
                     sHtmlResult = oStreamReader.ReadToEnd();
+
                 } catch (Exception) { sHtmlResult = String.Empty; }
             }
             oWebClient = null;
 
-            // Search 10 results
-            for (int i = 0; i < 10; i++) {
-                // Find a valid link
-                string sLink = "link-" + (i + 1);
-
-                if (sHtmlResult.Contains(sLink)) {
-                    string sHtmlResultLink = sHtmlResult.Substring(sHtmlResult.IndexOf(sLink));
-                    
-                    int nPosLinkHrefStart = sHtmlResultLink.IndexOf("href=\"") + 6;
-                    int nPosLinkHrefLength = sHtmlResultLink.Substring(nPosLinkHrefStart).IndexOf("\"");
-
-                    string sUrl = sHtmlResultLink.Substring(nPosLinkHrefStart, nPosLinkHrefLength);
-
-                    // Check if url is valid
-                    string sParamToSearch;
-                    if (oFrmMain.getTxtSearchEngineParam().Length > 0) sParamToSearch = oFrmMain.getTxtSearchEngineParam();
-                    else sParamToSearch = Global.GLOBAL_PARAM_SEARCH_ENGINE_SEARCH_DEFAULT_VALUE_1;
-
-                    string sPage;
-                    if (oFrmMain.getRbSearchEnginePages1IsChecked()) sPage = ".asp?";
-                    else sPage = ".aspx?";
-
-                    if (sUrl.ToLower().Contains(sPage + sParamToSearch.ToLower() + "=")) {
-                        oFrmMain.refreshSearchURLResults(sUrl);
+            string[] oLinkPatterns = Global.GLOBAL_SERVER_SEARCH_ENGINE_LINK_PATTERNS.Split(';');
+            int nLastPosLinkStart = 0;
+            
+            if (oLinkPatterns.Length > 0) {
+                // Search 10 results
+                for (int i = 0; i < 10; i++) {
+                    // Find a valid link
+                    int nCurrentPosLinkStart = nLastPosLinkStart;
+                     
+                    Boolean bFindPattern = false;
+                    for(int j = 0; ((j < oLinkPatterns.Length) && (!bFindPattern)); j++) {
+                        nCurrentPosLinkStart = sHtmlResult.IndexOf(oLinkPatterns[j], nLastPosLinkStart);
+                        if (nCurrentPosLinkStart != -1) bFindPattern = true; 
                     }
-                }
 
-                oFrmMain.refreshSearchURLProgressBar();
+                    if ((bFindPattern) && (nCurrentPosLinkStart != nLastPosLinkStart)) {
+                        nLastPosLinkStart = nCurrentPosLinkStart + 1;
+
+                        string sHtmlResultLink = sHtmlResult.Substring(nLastPosLinkStart);
+                    
+                        int nPosLinkHrefStart = sHtmlResultLink.IndexOf("href=\"") + 6;
+                        int nPosLinkHrefLength = sHtmlResultLink.Substring(nPosLinkHrefStart).IndexOf("\"");
+
+                        string sUrl = sHtmlResultLink.Substring(nPosLinkHrefStart, nPosLinkHrefLength);
+
+                        // Check if url is valid
+                        string sParamToSearch;
+                        if (oFrmMain.getTxtSearchEngineParam().Length > 0) sParamToSearch = oFrmMain.getTxtSearchEngineParam();
+                        else sParamToSearch = Global.GLOBAL_PARAM_SEARCH_ENGINE_SEARCH_DEFAULT_VALUE_1;
+
+                        string sPage;
+                        if (oFrmMain.getRbSearchEnginePages1IsChecked()) sPage = ".asp?";
+                        else sPage = ".aspx?";
+
+                        if (sUrl.ToLower().Contains(sPage + sParamToSearch.ToLower() + "=")) {
+                            oFrmMain.refreshSearchURLResults(sUrl);
+                        }
+                    }
+
+                    oFrmMain.refreshSearchURLProgressBar();
+                }
             }
         }
     }
