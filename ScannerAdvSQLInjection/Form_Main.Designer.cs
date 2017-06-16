@@ -112,8 +112,6 @@
             "India - in",
             "Indonesia - id",
             "Italia - it",
-            "Japón - je",
-            "Malasia - me",
             "Noruega - no",
             "Nueva Zelanda - nz",
             "Perú - pe",
@@ -127,7 +125,6 @@
             "Tailandia - th",
             "Taiwan - tw",
             "Turquía - tr",
-            "Tuvalu - tv",
             "Venezuela - ve",
             "Vietnam - vn"});
             this.cbSearchEngineLang.Location = new System.Drawing.Point(71, 47);
@@ -665,10 +662,11 @@
             this.Controls.Add(this.gbSearchEngineLang);
             this.Controls.Add(this.btnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Advanced SQL Injection v1.0";
+            this.Text = "Advanced SQL Injection v2.0 -  (SYSCODE)";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.gbSearchEngineLang.ResumeLayout(false);
             this.gbSearchEngineLang.PerformLayout();
