@@ -1,8 +1,0 @@
-C:\Documents and Settings\Nixel\Mis documentos\Visual Studio 2005\Projects\ScannerAdvSQLInjection\ScannerAdvSQLInjection\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\Nixel\Mis documentos\Visual Studio 2005\Projects\ScannerAdvSQLInjection\ScannerAdvSQLInjection\obj\Debug\ScannerAdvSQLInjection.Properties.Resources.resources
-C:\Documents and Settings\Nixel\Mis documentos\Visual Studio 2005\Projects\ScannerAdvSQLInjection\ScannerAdvSQLInjection\obj\Debug\ScannerAdvSQLInjection.csproj.GenerateResource.Cache
-C:\Documents and Settings\Nixel\Mis documentos\Visual Studio 2005\Projects\ScannerAdvSQLInjection\ScannerAdvSQLInjection\bin\Debug\ScannerAdvSQLInjection.exe
-C:\Documents and Settings\Nixel\Mis documentos\Visual Studio 2005\Projects\ScannerAdvSQLInjection\ScannerAdvSQLInjection\bin\Debug\ScannerAdvSQLInjection.pdb
-C:\Documents and Settings\Nixel\Mis documentos\Visual Studio 2005\Projects\ScannerAdvSQLInjection\ScannerAdvSQLInjection\obj\Debug\ScannerAdvSQLInjection.exe
-C:\Documents and Settings\Nixel\Mis documentos\Visual Studio 2005\Projects\ScannerAdvSQLInjection\ScannerAdvSQLInjection\obj\Debug\ScannerAdvSQLInjection.pdb
-C:\Documents and Settings\Nixel\Mis documentos\Visual Studio 2005\Projects\ScannerAdvSQLInjection\ScannerAdvSQLInjection\obj\Debug\ScannerAdvSQLInjection.Frm_Main.resources
