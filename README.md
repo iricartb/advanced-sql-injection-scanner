@@ -29,3 +29,9 @@ In summary, could say that vulnerability consists of three factors:<br><br>
   <li>IIS Web Server that displays the conversion function information. (Microsoft)</li>
   <li>Use a database user in the web page with maximum privileges. (System Administrator/Software Developer)</li>
 </ul>
+
+<h3>More information</h3>
+https://advanced-sql-injection.blogspot.com/2017/06/ivan-ricart-borges-advanced-sql.html
+
+<h3>Important</h3>
+I have the extended version 4.0 of the scanner in a private repository with all its functionalities.
