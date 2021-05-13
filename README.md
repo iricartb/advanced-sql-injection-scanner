@@ -35,7 +35,7 @@ https://advanced-sql-injection.blogspot.com/2017/06/ivan-ricart-borges-advanced-
 
 <h3>Version 4.0</h3>
 
-I have the extended version 4.0 of the scanner in a private repository with all its functionalities.
+I have the extended version 4.0 of the scanner in a private repository (visible by sponsors) with all its functionalities.
 <ul>
   <li>https://github.com/iricartb/advanced-sql-injection-scanner-release</li>
 </ul>
