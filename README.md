@@ -1,0 +1,6 @@
+<h1>Advanced SQL Injection Scanner - IIS & DBO</h1>
+<h2>Advanced mechanisms of sql injection that can be used by malicious users to obtain critical information and take advantage of it to gain complete control of a computer system.</h2>
+<h3>Explanatory Note</h3>
+This article doesn't attempt to explain a new technique of compromising computer systems, the technique of SQL Injection is very old and known but at the same time can be very powerful. The article also doesn't reflect the exploit of an unknown vulnerability, this is known and has already been reported, which if can reflect are unpublished advanced mechanisms of sql injection that can be used by malicious users to obtain critical information and take advantage of it to gain complete control of a computer system.<br>
+Combining this technique with an IIS Web Server with elevated user permissions (DBO) in the Microsoft SQL Server database can lead to complete loss of control of the affected server.<br>
+This article will attempt to explain the potential risk caused by misconfiguration of an SQL database that interacts with an external web page through an IIS Web Server and give details of how malicious users can benefit from it.
