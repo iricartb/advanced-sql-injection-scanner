@@ -1,3 +1,5 @@
+<img src="https://media.tempest.sk/download/vulnerability_scanning.jpg" width="100%" />
+
 <h1>Advanced SQL Injection Scanner - IIS & DBO</h1>
 
 <h2>Advanced mechanisms of sql injection that can be used by malicious users to obtain critical information and take advantage of it to gain complete control of a computer system.</h2>
