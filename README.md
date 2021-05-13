@@ -30,12 +30,12 @@ In summary, could say that vulnerability consists of three factors:<br><br>
   <li>Use a database user in the web page with maximum privileges. (System Administrator/Software Developer)</li>
 </ul>
 
-<h3>More information</h3>
-https://advanced-sql-injection.blogspot.com/2017/06/ivan-ricart-borges-advanced-sql.html
-
 <h3>Version 4.0 (Private)</h3>
 
 I have the extended version 4.0 of the scanner in a private repository (visible by sponsors) with all its functionalities.
 <ul>
   <li>https://github.com/iricartb/advanced-sql-injection-scanner-release</li>
 </ul>
+
+<h3>More information</h3>
+https://advanced-sql-injection.blogspot.com/2017/06/ivan-ricart-borges-advanced-sql.html
