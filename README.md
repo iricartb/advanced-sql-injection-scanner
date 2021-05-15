@@ -26,7 +26,7 @@ A typical output would be something like this:<br><br>
 Conversion failed when converting the nvarchar value '{user}' to data type int.<br><br>
 As we can see the {user} value corresponds to the current value of the user of the database, in addition to all of this if the value returned is dbo will tell us that the database user has maximum execution privileges, so that will be able to execute shell commands using the xp_cmdshell Transact-SQL function.<br><br>
 Using a web page with a database user with maximum privileges is a serious security error where system administrators should not fall.<br><br>
-In summary, could say that vulnerability consists of three factors:<br><br>
+In summary, could say that vulnerability consists of three factors:<br>
 <ul>
   <li>Error in handling the GET/POST parameters that allow SQL Injection. (Software Developer)</li>
   <li>IIS Web Server that displays the conversion function information. (Microsoft)</li>
