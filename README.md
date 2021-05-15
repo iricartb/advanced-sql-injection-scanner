@@ -5,12 +5,14 @@
 <h2>Advanced mechanisms of sql injection that can be used by malicious users to obtain critical information and take advantage of it to gain complete control of a computer system.</h2>
 
 <h3>Explanatory Note</h3>
-This article doesn't attempt to explain a new technique of compromising computer systems, the technique of SQL Injection is very old and known but at the same time can be very powerful. The article also doesn't reflect the exploit of an unknown vulnerability, this is known and has already been reported, which if can reflect are unpublished advanced mechanisms of sql injection that can be used by malicious users to obtain critical information and take advantage of it to gain complete control of a computer system.<br>
-Combining this technique with an IIS Web Server with elevated user permissions (DBO) in the Microsoft SQL Server database can lead to complete loss of control of the affected server.<br>
+This article doesn't attempt to explain a new technique of compromising computer systems, the technique of SQL Injection is very old and known but at the same time can be very powerful. The article also doesn't reflect the exploit of an unknown vulnerability, this is known and has already been reported, which if can reflect are unpublished advanced mechanisms of sql injection that can be used by malicious users to obtain critical information and take advantage of it to gain complete control of a computer system.<br><br>
+
+Combining this technique with an IIS Web Server with elevated user permissions (DBO) in the Microsoft SQL Server database can lead to complete loss of control of the affected server.<br><br>
 This article will attempt to explain the potential risk caused by misconfiguration of an SQL database that interacts with an external web page through an IIS Web Server and give details of how malicious users can benefit from it.
 
 <h3>Short Summary (wikipedia)</h3>
-SQL Injection is a code injection technique, used to attack data-driven applications, in which nefarious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker). SQL injection must exploit a security vulnerability in an application's software, for example, when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed and unexpectedly executed. SQL injection is mostly known as an attack vector for websites but can be used to attack any type of SQL database.<br>
+SQL Injection is a code injection technique, used to attack data-driven applications, in which nefarious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker). SQL injection must exploit a security vulnerability in an application's software, for example, when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed and unexpectedly executed. SQL injection is mostly known as an attack vector for websites but can be used to attack any type of SQL database.<br><br>
+
 SQL injection attacks allow attackers to spoof identity, tamper with existing data, cause repudiation issues such as voiding transactions or changing balances, allow the complete disclosure of all data on the system, destroy the data or make it otherwise unavailable, and become administrators of the database server.
 
 <h3>Vulnerability</h3>
