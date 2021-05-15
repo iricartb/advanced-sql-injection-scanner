@@ -33,7 +33,6 @@ In summary, could say that vulnerability consists of three factors:<br><br>
 </ul>
 
 <h3>Version 4.0 (Private)</h3>
-
 The extended version 4.0 of the scanner it's in a private repository (visible by sponsors) with all its functionalities.
 <ul>
   <li>https://github.com/iricartb/advanced-sql-injection-scanner-release</li>
